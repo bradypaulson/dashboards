@@ -5,30 +5,56 @@ format: dashboard
 ---
 
 ```{r}
-library(tidyverse)
+#install.packages("plotly")
 library(plotly)
-library(palmerpenguins)
-library(ggplot)
-install.packages("palmerpenguins")
-install.packages("plotly")
-install.packages("ggplot")
+#library(palmerpenguins)
+#library(ggplot)
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+#install.packages("ggplot2")
 penguins <- penguins
 ```
 
+# Plots
+
 ## Row 1
 
-```{r}
-ggplot(data = penguins, aes(x = island, y = body_mass)) +
+```{r, warning=FALSE}
+mass_by_island <- ggplot(data = penguins, aes(x = island, y = body_mass)) +
   geom_boxplot()
+ggplotly(mass_by_island)
 ```
 
-```{r}
-ggplot(data = penguins, aes(x = island, y = bill_len)) +
+```{r, warning=FALSE}
+bill_by_island <- ggplot(data = penguins, aes(x = island, y = bill_len)) +
   geom_boxplot()
+ggplotly(bill_by_island)
 ```
+
+## Row 2 {.tabset}
+
+```{r, warning= FALSE}
+#| title: Flipper Length By Mass
+ggplot(penguins,aes(body_mass, flipper_len, color = species)) +
+  geom_point()
+```
+
+```{r, warning= FALSE}
+#| title: Bill Length By Mass
+ggplot(penguins,aes(body_mass, bill_len, color = species)) +
+  geom_point()
+```
+
+# Data Table
+
+This dataset describes 344 individual penguins and comes form the Palmer Penguins package. These three species of penguins live on three different islands. 
 
 ## Row 2
 
-```{r}
+```{r, warning=FALSE}
+penguins <- penguins |> 
+  select(-c(year))
 
+
+knitr::kable(penguins)
 ```
