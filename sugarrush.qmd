@@ -1,6 +1,9 @@
 ---
 title: "Sugar Rush"
 format: html
+author: "Brady Paulson"
+date: "11/2/2026"
+theme: sketchy
 ---
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -11,7 +14,7 @@ library(fivethirtyeight)
 candy <- fivethirtyeight::candy_rankings
 
 most_sugar <- candy |> 
-  arrange(sugarpercent) |> 
+  arrange(desc(sugarpercent)) |> 
   slice(1)
 
 least_sugar <- candy |> 
@@ -63,18 +66,17 @@ bslib::value_box(
 ## How Often Is Sugary Candy Picked?
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-p <- ggplot(candy,aes(x = sugarpercent,y = winpercent,text = paste(
-  "Candy:", competitorname,
-  "<br>Sugar:", round(sugarpercent, 2),
-  "<br>Win %:", round(winpercent, 1), "%"))) +
+p <- ggplot(candy,aes(x = sugarpercent,y = winpercent)) +
   geom_point(
+    aes(text = paste(
+      "Candy:", competitorname,
+      "<br>Sugar:", round(sugarpercent, 2),
+      "<br>Win %:", round(winpercent, 1), "%")), 
     color = "purple",
     size = 3,
     alpha = 0.75) +
-  geom_line(
-    color = "red",
-    linewidth = 1.5,
-    inherit.aes = TRUE
+  geom_smooth(
+    method="lm"
   ) +
   labs(
     title = "Sugar Rush!",
@@ -82,6 +84,15 @@ p <- ggplot(candy,aes(x = sugarpercent,y = winpercent,text = paste(
     x = "Sugar Percentage",
     y = "Win Percentage") +
   theme_minimal()
+
+#p <-ggplot(candy,aes(x = sugarpercent,y = winpercent)) +
+#  geom_point(
+#    color = "purple",
+#    size = 3,
+#    alpha = 0.75) +
+#  geom_smooth(
+#    method="lm"
+#  )
 
 
 plotly::ggplotly(p, tooltip = "text")
