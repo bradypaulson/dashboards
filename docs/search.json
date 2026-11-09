@@ -12,5 +12,61 @@
     "title": "dashboards",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "sugarrush.html",
+    "href": "sugarrush.html",
+    "title": "Sugar Rush",
+    "section": "",
+    "text": "Most Sugary Candy\nOne dime\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeast Sugary Candy\nOne dime"
+  },
+  {
+    "objectID": "candy.html",
+    "href": "candy.html",
+    "title": "Candy",
+    "section": "",
+    "text": "list( \n  icon = \"basket\",\n  color = \"warning\",\n  value = nrow(candy))\n\n$icon\n[1] \"basket\"\n\n$color\n[1] \"warning\"\n\n$value\n[1] 85\n\n\n\nlist( \n  icon = \"heart-fill\",\n  color = \"secondary\",\n  value =  sum(candy$type == \"fruity\"))\n\n$icon\n[1] \"heart-fill\"\n\n$color\n[1] \"secondary\"\n\n$value\n[1] 37"
+  },
+  {
+    "objectID": "candy.html#row-1",
+    "href": "candy.html#row-1",
+    "title": "Candy",
+    "section": "",
+    "text": "list( \n  icon = \"basket\",\n  color = \"warning\",\n  value = nrow(candy))\n\n$icon\n[1] \"basket\"\n\n$color\n[1] \"warning\"\n\n$value\n[1] 85\n\n\n\nlist( \n  icon = \"heart-fill\",\n  color = \"secondary\",\n  value =  sum(candy$type == \"fruity\"))\n\n$icon\n[1] \"heart-fill\"\n\n$color\n[1] \"secondary\"\n\n$value\n[1] 37"
+  },
+  {
+    "objectID": "candy.html#row-2",
+    "href": "candy.html#row-2",
+    "title": "Candy",
+    "section": "Row 2",
+    "text": "Row 2"
+  },
+  {
+    "objectID": "sugarrush.html#row-1",
+    "href": "sugarrush.html#row-1",
+    "title": "Sugar Rush",
+    "section": "",
+    "text": "Most Sugary Candy\nOne dime\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeast Sugary Candy\nOne dime"
+  },
+  {
+    "objectID": "sugarrush.html#row-2",
+    "href": "sugarrush.html#row-2",
+    "title": "Sugar Rush",
+    "section": "Row 2",
+    "text": "Row 2"
+  },
+  {
+    "objectID": "sugarrush.html#most-and-least-sugary-candy",
+    "href": "sugarrush.html#most-and-least-sugary-candy",
+    "title": "Sugar Rush",
+    "section": "",
+    "text": "Most Sugary Candy\nOne dime\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeast Sugary Candy\nOne dime"
+  },
+  {
+    "objectID": "sugarrush.html#how-often-is-sugary-candy-picked",
+    "href": "sugarrush.html#how-often-is-sugary-candy-picked",
+    "title": "Sugar Rush",
+    "section": "How Often Is Sugary Candy Picked?",
+    "text": "How Often Is Sugary Candy Picked?"
   }
 ]

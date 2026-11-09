@@ -2,12 +2,12 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "dashboards"
+  title: "Candy Rush"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - href: candy.qmd
+        text: Candy Data
+      - sugarrush.qmd
 
 format:
   html:
